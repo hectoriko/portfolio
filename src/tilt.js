@@ -14,7 +14,7 @@ VanillaTilt.init(document.querySelector(".tituloDiseño"), {
   "mouse-event-element": "#cabeceraTrabajosDiseño",
 });
 
-VanillaTilt.init(document.querySelector("#cv"), {
+VanillaTilt.init(document.querySelector("#cvLink"), {
   scale: 1.1,
   glare: true,
   // perspective: 1100,

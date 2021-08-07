@@ -12,6 +12,7 @@ import "./images";
 // Importamos librerias
 import "./tilt";
 import "./type";
+import "./scroll";
 
 // Importamos resto de JS
 // import "./global";

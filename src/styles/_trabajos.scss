@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: variables.$nav-height-mobile;
   padding: variables.$padding-movil;
   height: calc(100vh - #{variables.$nav-height-mobile});
   position: relative;
@@ -22,7 +23,7 @@
 
   // Seleccionamos los h1
   // Lo que la librería Typed va a meter dentro
-  // Y el cursor
+
   h1,
   .tituloWeb
   /* .typed-cursor */ {
@@ -39,11 +40,12 @@
     }
   }
 
-  .typed-cursor {
-    position: relative;
-    top: 0;
-    transform: translateY(50%);
-  }
+  // Y el cursor
+  // .typed-cursor {
+  //   position: relative;
+  //   top: 0;
+  //   transform: translateY(50%);
+  // }
 
   &#cabeceraTrabajosDesarrollador {
     &::after {
