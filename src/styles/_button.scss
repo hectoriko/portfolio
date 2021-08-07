@@ -1,0 +1,21 @@
+@use "variables";
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  background-color: variables.$main-color;
+  color: variables.$text-color;
+  border-radius: 5px;
+  margin-top: 1.3rem;
+  font: {
+    size: 1.35rem;
+    weight: 600;
+  }
+  &:hover {
+    background-color: variables.$text-color;
+    color: variables.$main-color;
+    content: "ojo";
+  }
+}

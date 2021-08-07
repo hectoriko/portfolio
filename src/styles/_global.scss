@@ -1,0 +1,43 @@
+@use "variables";
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap");
+
+body {
+  color: variables.$text-color;
+  text-align: center;
+  font: {
+    family: "Lexend", "HelveticaLtStd", Helvetica, Arial, sans-serif;
+    weight: 400;
+    size: 16px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+/* Estilos auxiliares */
+.contenedorCentrador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#arrowDown {
+  font-size: 1.2rem;
+  color: #ffffff;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: arrowin 0.5s ease-out 1s both;
+}
+
+@keyframes arrowin {
+  from {
+    bottom: -15px;
+  }
+  to {
+    bottom: 20px;
+  }
+}

@@ -1,0 +1,79 @@
+@use "variables";
+
+.seccionInicioYo {
+  background-color: variables.$main-color;
+  margin-top: variables.$nav-height-mobile;
+  padding: variables.$padding-movil;
+  height: calc(100vh - #{variables.$nav-height-mobile});
+  flex-direction: column;
+
+  h1 {
+    font-size: 3.3rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    line-height: 1.3rem;
+    font-weight: 500;
+
+    &:last-of-type {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  p {
+    line-height: 1.15rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  img {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  /* ------------------------ */
+  /* Estilos página principal */
+  .seccionInicioYo {
+    text-align: left;
+    flex-direction: row;
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .seccionInicioYoTexto {
+      flex: 3 1 55%;
+      max-width: 500px;
+      margin-right: 80px;
+    }
+
+    .seccionInicioYoFoto {
+      flex: 4 1 45%;
+      max-width: 400px;
+    }
+  }
+}

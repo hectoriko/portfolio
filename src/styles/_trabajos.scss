@@ -1,0 +1,182 @@
+@use "variables";
+
+.cabeceraTrabajos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: variables.$padding-movil;
+  height: calc(100vh - #{variables.$nav-height-mobile});
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: variables.$main-color;
+    z-index: -2;
+  }
+
+  // Seleccionamos los h1
+  // Lo que la librería Typed va a meter dentro
+  // Y el cursor
+  h1,
+  .tituloWeb
+  /* .typed-cursor */ {
+    --minFontSize: 1.5rem;
+    --maxFontSize: 90px;
+    --scaler: 5vw;
+    font: {
+      weight: 600;
+      size: clamp(
+        var(--minFontSize),
+        calc(1rem + #{var(--scaler)}),
+        var(--maxFontSize)
+      );
+    }
+  }
+
+  .typed-cursor {
+    position: relative;
+    top: 0;
+    transform: translateY(50%);
+  }
+
+  &#cabeceraTrabajosDesarrollador {
+    &::after {
+      background-image: url("../images/textura_stripes.png");
+      opacity: 0.25;
+      z-index: -1;
+      background-size: 10px 4px;
+    }
+  }
+
+  &#cabeceraTrabajosDiseño {
+    &::after {
+      background: {
+        image: url("../images/textura_papel.jpg");
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+      }
+      mix-blend-mode: luminosity;
+      opacity: 0.75;
+      z-index: -1;
+    }
+
+    .tituloDiseño {
+      border: 4px solid variables.$text-color;
+      // padding: 2rem 3rem; Esto sería para escritorio
+      padding: 1.3rem 1.6rem;
+      transform-style: preserve-3d;
+
+      &:hover {
+        cursor: url("../images/custom-cursor.png"),
+          url("../images/custom-cursor.cur"), cell;
+      }
+
+      h1 {
+        transform: translateZ(20px);
+      }
+
+      .manejador {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        width: 15px;
+        height: 15px;
+        border: 4px solid variables.$text-color;
+        background-color: variables.$main-color;
+
+        &:nth-child(1) {
+          top: 0;
+          left: 0;
+          transform: translate(-60%, -60%);
+        }
+
+        &:nth-child(2) {
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -60%);
+        }
+
+        &:nth-child(3) {
+          top: 0;
+          left: 100%;
+          transform: translate(-40%, -60%);
+        }
+
+        &:nth-child(4) {
+          top: 50%;
+          left: 0;
+          transform: translate(-60%, -50%);
+        }
+
+        &:nth-child(5) {
+          top: 50%;
+          left: 100%;
+          transform: translate(-40%, -50%);
+        }
+
+        &:nth-child(6) {
+          top: 100%;
+          left: 0;
+          transform: translate(-60%, -40%);
+        }
+
+        &:nth-child(7) {
+          top: 100%;
+          left: 50%;
+          transform: translate(-50%, -40%);
+        }
+
+        &:nth-child(8) {
+          top: 100%;
+          left: 100%;
+          transform: translate(-40%, -40%);
+        }
+      }
+    }
+  }
+}
+
+.seccionGridTrabajos {
+  columns: 1 auto;
+  column-gap: 1rem;
+  padding: variables.$padding-movil;
+
+  .contenedorMiniatura {
+    width: 150px;
+    margin: 0 1rem 1rem 0;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid rgb(153, 153, 153);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .cabeceraTrabajos {
+    &#cabeceraTrabajosDiseño {
+      .tituloDiseño {
+        padding: 2rem 3rem;
+      }
+    }
+  }
+
+  .seccionGridTrabajos {
+    padding: variables.$padding-escritorio;
+    columns: 3 auto;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}

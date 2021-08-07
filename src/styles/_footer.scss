@@ -1,0 +1,11 @@
+@use "variables";
+
+footer {
+  background-color: variables.$gray-color;
+  padding: 1.3rem;
+
+  i {
+    color: variables.$main-color;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+  }
+}

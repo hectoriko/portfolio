@@ -17,24 +17,14 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, "dist"),
-    assetModuleFilename: "images/[hash][ext][query]",
+    assetModuleFilename: "images/[name][ext][query]",
   },
 
   module: {
     rules: [
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        // type: "asset/inline", // Adds the image as inline attribute
-        // type: "asset/resource", // Links to the image as external file
-        type: "asset", // Webpack decides if the image will be inline or a externa file based on size
-
-        // Incrementamos el tamaño máximo de archivo para que considere
-        // si lo añade como inline, o como archivo externo
-        /* parser: {
-          dataUrlCondition: {
-            maxSize: 30 * 1024,
-          }
-        } */
+        type: "asset/resource",
       },
       {
         test: /\.(s[ac]|c)ss$/i,
@@ -62,7 +52,19 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
+      title: "Inicio | Héctor",
+      filename: "index.html",
       template: "./src/index.html",
+    }),
+    new HtmlWebpackPlugin({
+      title: "Maquetador Web | Héctor",
+      filename: "web.html",
+      template: "./src/web.html",
+    }),
+    new HtmlWebpackPlugin({
+      title: "Diseño gráfico | Héctor",
+      filename: "design.html",
+      template: "./src/design.html",
     }),
   ],
 
@@ -75,5 +77,13 @@ module.exports = {
   devServer: {
     contentBase: "./dist",
     hot: true,
+    // https: true,
+    // host: "0.0.0.0",
+    host: "192.168.0.26",
+    port: 8080,
+    disableHostCheck: true,
+    useLocalIp: true,
+
+    index: "index.html",
   },
 };

@@ -1,0 +1,96 @@
+@use "variables";
+
+/* Navegacion */
+nav {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  width: 100%;
+  height: variables.$nav-height-mobile;
+  background: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+
+  & > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #logo {
+    margin-right: auto;
+    text-transform: capitalize;
+    font: {
+      size: 22px;
+      weight: 600;
+    }
+  }
+
+  #menuDesktop {
+    display: none;
+    a:not(:last-child) {
+      margin: 0 1rem;
+    }
+  }
+
+  #menuMobile {
+    a {
+      margin: 1rem 0;
+    }
+
+    .menuLateral {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0rem;
+      padding-top: 1.5rem;
+      background-color: variables.$main-color;
+      box-shadow: 0 0 10px black;
+      overflow-x: hidden;
+      transition: 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+
+      i {
+        align-self: flex-end;
+        margin-right: 1.5rem;
+      }
+
+      &.abierto {
+        width: 100%;
+      }
+
+      & > * {
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: variables.$breakpoint-movil) {
+  nav {
+    height: variables.$nav-height-desktop;
+    padding: 1.5rem;
+
+    #menuMobile {
+      display: none;
+    }
+
+    #menuDesktop {
+      display: unset;
+      a:hover {
+        color: variables.$main-color;
+      }
+    }
+  }
+}

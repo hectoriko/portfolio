@@ -4,7 +4,218 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Héctor Design</title>
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/fa63d3d034.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jQuery -->
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+      defer
+    ></script> -->
+
+    <!-- Live Server -->
+    <!-- <link rel="stylesheet" href="main.css" />
+    <script type="module" src="index.js" defer></script> -->
+
+    <!-- #region -- Favicon -->
+    <!-- For old IEs -->
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <!-- For new browsers - multisize ico  -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      sizes="16x16 32x32"
+      href="images/favicon/favicon.ico"
+    />
+    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="images/favicon/favicon-152-precomposed.png"
+    />
+    <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="images/favicon/favicon-144-precomposed.png"
+    />
+    <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="images/favicon/favicon-120-precomposed.png"
+    />
+    <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="images/favicon/favicon-114-precomposed.png"
+    />
+    <!-- For iPhone 6+ -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon/favicon-180-precomposed.png"
+    />
+    <!-- For first- and second-generation iPad: -->
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="images/favicon/favicon-72-precomposed.png"
+    />
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="images/favicon/favicon-57.png"
+    />
+    <!-- For Old Chrome -->
+    <link rel="icon" sizes="32x32" href="images/favicon/favicon-32.png" />
+    <!-- For IE10 Metro -->
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="favicon-144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Chrome for Android -->
+    <!-- <link rel="manifest" href="images/favicon/manifest.json" /> -->
+    <link rel="icon" sizes="192x192" href="images/favicon/favicon-192.png" />
+    <!-- #endregion -->
   </head>
-  <body></body>
+  <body>
+    <!-- Navegación -->
+    <nav id="nav"></nav>
+
+    <!-- Sección Yo -->
+    <section class="seccionInicioYo contenedorCentrador">
+      <div
+        class="seccionInicioYoTexto"
+        data-aos="fade-right"
+        data-aos-delay="250"
+        data-aos-mirror="true"
+      >
+        <h1><span>Soy</span> Héctor,</h1>
+        <h2>maquetador web</h2>
+        <h2>& diseñador gráfico</h2>
+        <p>
+          Siempre me ha apasionado como color, forma y tipografía se unen para
+          expresar una idea. Ya sea en formato web o impreso. Por eso me encanta
+          tanto diseñar teniendo en cuenta la experiencia de usuario, como
+          desarrollar esas ideas de la forma mas eficiente posible.
+        </p>
+      </div>
+
+      <div
+        class="seccionInicioYoFoto"
+        data-aos="fade-left"
+        data-aos-delay="250"
+        data-aos-mirror="true"
+      >
+        <img
+          src="images/hector_portada_hoodie.png"
+          alt="Foto de Héctor principal"
+        />
+      </div>
+      <a href="#next"><i class="fas fa-chevron-down" id="arrowDown"></i></a>
+    </section>
+
+    <!-- Sección areas trabajo -->
+    <section class="seccionInicioAreasTrabajo">
+      <section class="seccionFotoFondo" id="imgDesarrollador">
+        <h2>
+          Maquetador <br />
+          web
+        </h2>
+        <a href="web.html">
+          <button>Ver</button>
+        </a>
+      </section>
+
+      <section class="seccionFotoFondo" id="imgDiseno">
+        <h2>
+          Diseño <br />
+          gráfico
+        </h2>
+        <a href="design.html">
+          <button>Ver</button>
+        </a>
+      </section>
+    </section>
+
+    <!-- Sección contacto -->
+    <section class="seccionContacto contenedorCentrador" id="seccionContacto">
+      <a
+        href="pdf/CV_Hector_Martin_Lopez.pdf"
+        download
+        id="cv"
+        data-aos="zoom-in"
+        data-aos-offset="250"
+        data-aos-delay="200"
+        data-aos-once="true"
+        data-aos-duration="650"
+        ><img
+          src="images/CV_Hector_Martin_Lopez.png"
+          alt="Miniatura de curriculum"
+      /></a>
+      <p>Descarga mi CV, visita mis perfiles o mándame un email a:</p>
+      <a id="email" href="mailto:martin.lopez.hector@gmail.com"
+        ><span>martin.lopez.hector@gmail.com</span></a
+      >
+      <section class="contenedorCentrador" id="contendorLogos">
+        <!-- Behance -->
+        <a href="https://www.behance.net/hectorml" target="_blank"
+          ><img
+            class="logoRRSS"
+            src="images/logo_Behance.svg"
+            alt="behance"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="100"
+            data-aos-once="true"
+        /></a>
+        <!-- Github -->
+        <a href="https://github.com/hectoriko" target="_blank"
+          ><img
+            class="logoRRSS"
+            src="images/logo_GitHub.svg"
+            alt="github"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="200"
+            data-aos-once="true"
+        /></a>
+        <!-- Linked In -->
+        <a
+          href="https://www.linkedin.com/in/hector-martin-lopez/"
+          target="_blank"
+          ><img
+            class="logoRRSS"
+            src="images/logo_LinkedIn.svg"
+            alt="linkedin"
+            data-aos="fade-up"
+            data-aos-offset="60"
+            data-aos-delay="300"
+            data-aos-once="true"
+        /></a>
+      </section>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>

@@ -1,0 +1,54 @@
+@use "variables";
+
+.seccionContacto {
+  height: calc(100vh - #{variables.$nav-height-mobile});
+  background-color: #fff;
+  padding: variables.$padding-movil;
+  flex-direction: column;
+
+  #cv {
+    width: 150px;
+    border: 2px solid variables.$gray-color;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease-in-out;
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      border: 2px solid variables.$main-color;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+      // transform: rotate(1.5deg) scale(1.1);
+    }
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  span {
+    color: variables.$main-color;
+    font-weight: 600;
+  }
+
+  #contendorLogos {
+    margin-top: 1.5rem;
+    flex-direction: column;
+
+    .logoRRSS {
+      height: 2rem;
+      margin: 0.4rem;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .seccionContacto {
+    #contendorLogos {
+      flex-direction: row;
+      .logoRRSS {
+        margin: 0.4rem 1rem;
+      }
+    }
+  }
+}
