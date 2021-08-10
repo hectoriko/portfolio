@@ -1,7 +1,8 @@
 import { infoProyectos } from "./info-proyectos.js";
 
 function cargarProyectos() {
-  const area = trabajos.dataset.area;
+  // const area = trabajos.dataset.area;
+  const area = trabajos.id.split("-").pop();
   const proyectos = infoProyectos.filter(proyecto => proyecto.area === area);
   // const contenedor = document.querySelector(`[data-area="${area}"]`);
 

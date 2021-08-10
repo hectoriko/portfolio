@@ -1,74 +1,160 @@
 import { infoProyectos } from "./info-proyectos.js";
 
-function abrirModal() {
-  const proyecto = infoProyectos.find(proyecto => proyecto.id === this.id);
+// Template modal
+const templateModal = /* html */ `
+  <div class="contenedorCerrar">
+    <i class="fa fa-times" id="cerrarModal"></i>
+  </div>
 
-  /* Modal */
-  const modal = document.createElement("section");
-  modal.classList.add("modal");
-  modal.id = proyecto.id;
+  <div class="modal">
+    <div class="cuerpoModalTexto"></div>
+    <div class="cuerpoModalGaleria"></div>
+  </div>
 
-  /* Cabecera */
-  const cabeceraModal = document.createElement("div");
-  cabeceraModal.classList.add("cabeceraModal");
+  <nav class="navigation">
+    <i class="fas fa-chevron-left" id="prev"></i>
+    <section class="steps"></section>
+    <i class="fas fa-chevron-right" id="next"></i>
+  </nav>`;
 
-  const cerrar = document.createElement("i");
-  cerrar.classList.add("fa", "fa-times", "cerrarModal");
-  cabeceraModal.appendChild(cerrar);
+//
+// Insertar Template modal
+const contenedorModal = document.querySelector(".contenedorModal");
+contenedorModal.innerHTML = templateModal;
 
-  /* Cuerpo */
-  const cuerpoModal = document.createElement("div");
-  cuerpoModal.classList.add("cuerpoModal");
+//
+// Variables globales
+const trabajos = document.querySelector('[id^="trabajos"]');
+const area = trabajos.id.split("-").pop();
+const proyectos = infoProyectos.filter(proyecto => proyecto.area === area);
 
-  const cuerpoModalTexto = document.createElement("div");
-  cuerpoModalTexto.classList.add("cuerpoModalTexto");
-  cuerpoModalTexto.innerHTML = ` <h2>${proyecto.titulo}</h2>
-      <p>${proyecto.texto}</p>`;
+//
+// Creamos contador
+const contador = {
+  proyectoActual: 0,
+  min: 0,
+  max: proyectos.length - 1,
+};
 
-  const cuerpoModalGaleria = document.createElement("div");
-  cuerpoModalGaleria.classList.add("cuerpoModalGaleria");
+const cerrarModal = document.querySelector("#cerrarModal");
+cerrarModal.addEventListener("click", toggleModal);
 
-  proyecto.imagenes.forEach(imagen => {
-    let img = document.createElement("img");
-    img.src = imagen.src;
-    img.alt = imagen.alt;
-    cuerpoModalGaleria.appendChild(img);
-
-    if (imagen.pie) {
-      let p = document.createElement("p");
-      p.classList.add("pieFoto");
-      p.textContent = imagen.pie;
-      cuerpoModalGaleria.appendChild(p);
-    }
-  });
-
-  /* Footer */
-  const footerModal = document.createElement("div");
-  footerModal.classList.add("footerModal");
-
-  /* Append todo lo creado  */
-  cuerpoModal.appendChild(cuerpoModalTexto);
-  cuerpoModal.appendChild(cuerpoModalGaleria);
-  modal.appendChild(cabeceraModal);
-  modal.appendChild(cuerpoModal);
-  modal.appendChild(footerModal);
-  document.body.appendChild(modal);
-
-  // Cerrar el modal
-  cerrar.addEventListener("click", () => {
-    modal.remove();
-  });
-
-  // Cerrar el modal si se hace click fuera de el
-  window.onclick = e => {
-    if (e.target == modal) {
-      modal.remove();
-    }
-  };
-}
-
-/* Click en miniatura abre modal */
+//
+// Click en miniatura abre modal
 const miniaturas = document.querySelectorAll(".contenedorMiniatura");
 miniaturas.forEach(miniatura => {
-  miniatura.addEventListener("click", abrirModal);
+  miniatura.addEventListener("click", toggleModal);
+  miniatura.addEventListener("click", cargarInfoModal);
 });
+
+//
+// Cargar proyecto previo/siguiente
+const prev = document.querySelector("#prev");
+const next = document.querySelector("#next");
+prev.addEventListener("click", cargarInfoModal);
+next.addEventListener("click", cargarInfoModal);
+
+//
+// Comprobamos si es el primer/último proyecto
+function isEnd(num) {
+  if (num == contador.min) {
+    prev.classList.add("oculto");
+    prev.disabled = true;
+    return;
+  }
+
+  if (num == contador.max) {
+    next.classList.add("oculto");
+    next.disabled = true;
+    return;
+  }
+
+  if (num > contador.min || num < contador.max) {
+    prev.disabled = false;
+    next.disabled = false;
+    prev.classList.remove("oculto");
+    next.classList.remove("oculto");
+    return;
+  }
+}
+
+function cargarInfoModal(e) {
+  let proyecto;
+
+  // Definimos en que proyecto estamos
+  if (this.id == "next") {
+    contador.proyectoActual++;
+    proyecto = proyectos[contador.proyectoActual];
+  } else if (this.id == "prev") {
+    contador.proyectoActual--;
+    proyecto = proyectos[contador.proyectoActual];
+  } else {
+    proyecto = proyectos.find(proyecto => proyecto.id === this.id);
+    contador.proyectoActual = proyectos.indexOf(proyecto);
+  }
+
+  isEnd(contador.proyectoActual);
+
+  // Texto modal
+  const cuerpoModalTexto = document.querySelector(".cuerpoModalTexto");
+  cuerpoModalTexto.innerHTML = /* html */ `
+    <h2>${proyecto.titulo}</h2>
+    <p>${proyecto.texto}</p>
+  `;
+
+  // Galería modal
+  const cuerpoModalGaleria = document.querySelector(".cuerpoModalGaleria");
+  cuerpoModalGaleria.innerHTML = proyecto.imagenes
+    .map(imagen => {
+      // Solo imágen
+      if (!imagen.video && !imagen.caption) {
+        return /*html*/ `
+        <img src="${imagen.src}" alt="${imagen.alt}"/>
+        `;
+      }
+      // Imágen y caption
+      else if (!imagen.video && imagen.caption) {
+        return /*html*/ `
+        <img src="${imagen.src}" alt="${imagen.alt}"/>
+        <p class="pieFoto">${imagen.caption}</p>
+        `;
+      }
+      // Solo video
+      else if (imagen.video && !imagen.caption) {
+        return /*html*/ `
+        <video controls>
+          <source src="${imagen.src}" type="video/mp4" />
+          <!-- <source src="./images/video_buganvillas.webm" type="video/webm"> -->
+        </video>
+        `;
+        // Video y caption
+      } else if (imagen.video && imagen.caption) {
+        return /*html*/ `
+        <video controls>
+          <source src="${imagen.src}" type="video/mp4" />
+          <source src="${imagen.src2}" type="video/webm">
+        </video>
+        <p class="pieFoto">${imagen.caption}</p>
+        `;
+      }
+    })
+    .join("");
+
+  // Steps
+  const steps = document.querySelector(".steps");
+  steps.innerHTML = [...miniaturas]
+    .map(miniatura => {
+      if (miniatura.id === proyecto.id) {
+        return /* html */ `<div class="step stepActivo"></div>`;
+      } else {
+        return /* html */ `<div class="step"></div>`;
+      }
+    })
+    .join("");
+}
+
+function toggleModal() {
+  contenedorModal.classList.toggle("visible");
+}
+
+isEnd(contador.pasoActual);

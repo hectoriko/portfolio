@@ -25,17 +25,14 @@ const montajePagina = new Proyecto(
     {
       src: `${pathProyectos}/pagina_sumario_mockup.jpg`,
       alt: "Montaje de páginas del sumario.",
-      caption: "Pie sumario",
     },
     {
       src: `${pathProyectos}/pagina_cuatro_ruedas_mockup.jpg`,
       alt: "Montaje de páginas de la sección cuatro ruedas.",
-      caption: "Pie cuatro ruedas",
     },
     {
       src: `${pathProyectos}/pagina_enportada_mockup.jpg`,
       alt: "Montaje de páginas de la sección sumario en portada.",
-      caption: "Pie en portada",
     },
   ],
   `${pathProyectos}/pagina_enportada_thumb.jpg`,
@@ -49,28 +46,23 @@ const branding = new Proyecto(
   [
     {
       src: `${pathProyectos}/branding_inMotion_papeleria.jpg`,
-      alt: "Papeleria 01",
-      caption: "Pie papelería",
+      alt: "Papeleria de la empresa.",
     },
     {
       src: `${pathProyectos}/branding_inMotion_construccion_01.jpg`,
-      alt: "Papeleria 02",
-      caption: "Pie papelería",
+      alt: "Construcción del logo",
     },
     {
       src: `${pathProyectos}/branding_inMotion_construccion_02.jpg`,
-      alt: "Papeleria 03",
-      caption: "Pie papelería",
+      alt: "Detalle del logo",
     },
     {
       src: `${pathProyectos}/branding_inMotion_monigotes_01.jpg`,
-      alt: "Papeleria 04",
-      caption: "Pie papelería",
+      alt: "Monigotes de apoyo a la marca",
     },
     {
       src: `${pathProyectos}/branding_inMotion_monigotes_02.jpg`,
-      alt: "Papeleria 05",
-      caption: "Pie papelería",
+      alt: "Más monigotes de apoyo a la marca",
     },
   ],
   `${pathProyectos}/branding_inMotion_papeleria_thumb.jpg`,
@@ -84,18 +76,15 @@ const retoqueImagen = new Proyecto(
   [
     {
       src: `${pathProyectos}/retoque_bebidas_cocacola.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Fotografía original donde aparece una coca-cola y una cerveza.",
     },
     {
       src: `${pathProyectos}/retoque_bebidas_alhambra.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Sustitución de la coca-cola por un tercio de cerveza.",
     },
     {
       src: `${pathProyectos}/retoque_bebidas_pepsi.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Sustitución de la coca-cola por una Pepsi",
     },
   ],
   `${pathProyectos}/retoque_bebidas_cocacola_thumb.jpg`,
@@ -109,23 +98,19 @@ const tarjetas = new Proyecto(
   [
     {
       src: `${pathProyectos}/tarjetas_tucan_mosaico.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Mosaico de muchas tarjetas donde se ven anverso y reverso",
     },
     {
       src: `${pathProyectos}/tarjetas_tucan_frontal_trasera.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Tarjetas de pie donde se ven ambas caras",
     },
     {
       src: `${pathProyectos}/tarjetas_tucan_pila_trasera.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Pila de tarjetas con el reverso a la vista.",
     },
     {
       src: `${pathProyectos}/tarjetas_tucan_pila_frontal.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Pila de tarjetas con en avverso a la vista",
     },
   ],
   `${pathProyectos}/tarjetas_tucan_mosaico_thumb.jpg`,
@@ -139,33 +124,27 @@ const newsletter = new Proyecto(
   [
     {
       src: `${pathProyectos}/newsletter_01.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Detalle del índice",
     },
     {
       src: `${pathProyectos}/newsletter_02.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Detalle de portadilla",
     },
     {
       src: `${pathProyectos}/newsletter_03.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Detalle de subtitular",
     },
     {
       src: `${pathProyectos}/newsletter_04.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Detalle de titular",
     },
     {
       src: `${pathProyectos}/newsletter_05.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Detalle de sección",
     },
     {
       src: `${pathProyectos}/newsletter_06.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Detalle de comienzo de sección",
     },
   ],
   `${pathProyectos}/newsletter_02_thumb.jpg`,
@@ -178,18 +157,23 @@ const tresDe = new Proyecto(
   "Modelado, texturizado, iluminación, render y composiición. También integración con imagen real.",
   [
     {
+      src: `${pathProyectos}/render_silla.jpg`,
+      alt: "Render de una silla de madera",
+    },
+    {
       src: `${pathProyectos}/render_donuts.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Render de un donuts y una taza de café",
     },
     {
+      video: true,
       src: `${pathProyectos}/render_donuts_video.mp4`,
-      alt: "",
-      caption: "Animación donde todos los elementos están reaizados en 3D.",
+      src2: `${pathProyectos}/render_donuts_video.webm`,
+      caption: "Animación donde todos los elementos están realizados en 3D.",
     },
     {
+      video: true,
       src: `${pathProyectos}/render_donuts_integracion.mp4`,
-      alt: "",
+      src2: `${pathProyectos}/render_donuts_integracion.webm`,
       caption: "Integración de animación, con imagen real.",
     },
   ],
@@ -204,18 +188,18 @@ const lettering = new Proyecto(
   [
     {
       src: `${pathProyectos}/lettering_coffee.jpg`,
-      alt: "",
+      alt: "Lettering de la palabra Coffee",
       caption: "",
     },
     {
       src: `${pathProyectos}/lettering_bolsa.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Lettering de la frase 'Do what you love'",
     },
     {
       src: `${pathProyectos}/lettering_buganvillas.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Lettering de la palabra Buganvillas",
+      caption:
+        "Lettering realizado como parte de la creación de la identidad de un gastrobar.",
     },
   ],
   `${pathProyectos}/lettering_bolsa_thumb.jpg`,
@@ -229,19 +213,41 @@ const otros = new Proyecto(
   [
     {
       src: `${pathProyectos}/montaje_mano_comparacion.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Antes y después del montaje de una mano metálica",
     },
     {
       src: `${pathProyectos}/montaje_busto_comparacion.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Antes y después del montaje de un busto de piedra",
     },
   ],
   `${pathProyectos}/montaje_mano_final_thumb.jpg`,
 );
 
-const webNoe = new Proyecto(
+const video = new Proyecto(
+  "design",
+  "video",
+  "Videos",
+  "Montaje de videos.",
+  [
+    {
+      video: true,
+      src: `${pathProyectos}/video_buganvillas.mp4`,
+      src2: `${pathProyectos}/video_buganvillas.webm`,
+      caption:
+        "Video montado durante mi paso por el estudio ajusteFinal, para promocionar un nuevo negocio dedicado a la hostelería.",
+    },
+    {
+      video: true,
+      src: `${pathProyectos}/video_mascuatro.mp4`,
+      src2: `${pathProyectos}/video_mascuatro.webm`,
+      caption:
+        "Video montado durante mi paso por el estudio ajusteFinal, para promocionar la creación de la marca de una empresa de acabados.",
+    },
+  ],
+  `${pathProyectos}/montaje_mano_final_thumb.jpg`,
+);
+
+/* const webNoe = new Proyecto(
   "web",
   "webNoe",
   "Web mochilas",
@@ -255,22 +261,51 @@ const webNoe = new Proyecto(
   ],
   `${pathProyectos}/web_noe.jpg`,
   "https://hectormartindesign.com/resources/webs/mochilas_noe/index.html",
+); */
+
+const triger = new Proyecto(
+  "web",
+  "web-triger",
+  "Triger asesores",
+  "Diseño y maquetado de esta web para una asesoría fiscal y gestoría que quería ampliuar su negocio y darse a conocer via web.",
+  [
+    {
+      src: `${pathProyectos}/web_triger.png`,
+      alt: "Portada web de Triger",
+    },
+  ],
+  `${pathProyectos}/web_triger.png`,
+  "https://trigerasesores.com/",
 );
 
 const webAjuste = new Proyecto(
   "web",
-  "webAjuste",
+  "web-ajuste",
   "Web ajusteFinal",
   "Rediseño de la web de este estudio de diseño donde trabajé durante varios años. Se realizó en wordpress con el tema Divi.",
   [
     {
       src: `${pathProyectos}/web_ajustefinal.jpg`,
-      alt: "",
-      caption: "",
+      alt: "Portada web Ajuste Final",
     },
   ],
   `${pathProyectos}/web_ajustefinal.jpg`,
   "http://www.ajustefinal.com/",
+);
+
+const presupuesto = new Proyecto(
+  "web",
+  "webAjuste",
+  "Presupuesto",
+  "Diseño y programación de una página para calcular el presupuesto de un ordenador en base a las opciones elegidas mediante los formularios.",
+  [
+    {
+      src: `${pathProyectos}/web_presupuesto.png`,
+      alt: "Portada presupuesto",
+    },
+  ],
+  `${pathProyectos}/web_presupuesto.png`,
+  ".webs/presupuesto",
 );
 
 /* Generar array de forma manual que contiene los proyectos*/

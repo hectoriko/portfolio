@@ -6,6 +6,7 @@
   padding: variables.$padding-movil;
   height: calc(100vh - #{variables.$nav-height-mobile});
   flex-direction: column;
+  overflow-x: hidden;
 
   h1 {
     font-size: 3.3rem;

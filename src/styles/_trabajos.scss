@@ -54,6 +54,10 @@
       z-index: -1;
       background-size: 10px 4px;
     }
+
+    #strings {
+      opacity: 0;
+    }
   }
 
   &#cabeceraTrabajosDiseño {
@@ -158,6 +162,7 @@
     border: 1px solid rgb(153, 153, 153);
     border-radius: 20px;
     overflow: hidden;
+    cursor: pointer;
   }
 
   img {

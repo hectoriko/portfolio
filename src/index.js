@@ -4,7 +4,6 @@ import "./styles/index.scss";
 // Importamos componentes
 import "./navegacion";
 import "./footer";
-// import "./scroll";
 
 // Importamos imágenes
 import "./images";
@@ -15,6 +14,7 @@ import "./type";
 import "./scroll";
 
 // Importamos resto de JS
-// import "./global";
+import "./nav";
 import "./cargar-proyectos";
 import "./cargar-modal";
+// import "./pasos";

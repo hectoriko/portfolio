@@ -7,7 +7,7 @@
 
     <title><%= htmlWebpackPlugin.options.title %></title>
 
-    <!-- AOS -->
+    <!-- AOS - En esta pág. en concreto, lo cargo también via CDN para que las animaciones de hero carguen on first load -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Font Awesome -->
@@ -158,8 +158,8 @@
         download
         id="cvLink"
         data-aos="fade-up"
-        data-aos-offset="275"
-        data-aos-delay="1000"
+        data-aos-offset="250"
+        data-aos-delay="300"
         data-aos-once="true"
         data-aos-duration="650"
         ><img
@@ -214,9 +214,9 @@
     <footer id="footer"></footer>
 
     <!-- AOS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
-    </script>
+    </script> -->
   </body>
 </html>

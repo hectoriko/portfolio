@@ -7,9 +7,6 @@
 
     <title><%= htmlWebpackPlugin.options.title %></title>
 
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
     <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/fa63d3d034.js"
@@ -23,10 +20,6 @@
       crossorigin="anonymous"
       defer
     ></script> -->
-
-    <!-- Live Server -->
-    <!-- <link rel="stylesheet" href="main.css" />
-    <script type="module" src="index.js" defer></script> -->
 
     <!-- #region -- Favicon -->
     <!-- For old IEs -->
@@ -115,8 +108,7 @@
       <a href="#next"><i class="fas fa-chevron-down" id="arrowDown"></i></a>
     </section>
 
-    <!-- Sección desarrollo web -->
-    <section class="seccionGridTrabajos" id="trabajosDiseño" data-area="design">
+    <section class="seccionGridTrabajos" id="trabajos-design">
       <!-- <div class="contenedorMiniatura bordeImagen">
         <img
           class="imgMiniatura"
@@ -127,55 +119,70 @@
       <div class="contenedorMiniatura bordeImagen">
         <img
           class="imgMiniatura"
-          src="images/retoque_bebidas_cocacola_thumb.jpg"
-        />
-      </div>
-
-      <div class="contenedorMiniatura bordeImagen">
-        <img class="imgMiniatura" src="images/montaje_mano_final_thumb.jpg" />
-      </div>
-
-      <div class="contenedorMiniatura bordeImagen">
-        <img
-          class="imgMiniatura"
-          src="images/retoque_bebidas_cocacola_thumb.jpg"
-        />
-      </div>
-
-      <div class="contenedorMiniatura bordeImagen">
-        <img class="imgMiniatura" src="images/montaje_mano_final_thumb.jpg" />
-      </div>
-
-      <div class="contenedorMiniatura bordeImagen">
-        <img class="imgMiniatura" src="images/montaje_mano_final_thumb.jpg" />
-      </div>
-
-      <div class="contenedorMiniatura bordeImagen">
-        <img
-          class="imgMiniatura"
-          src="images/branding_inMotion_papeleria_thumb.jpg"
-        />
-      </div>
-
-      <div class="contenedorMiniatura bordeImagen">
-        <img class="imgMiniatura" src="images/montaje_mano_final_thumb.jpg" />
-      </div>
-
-      <div class="contenedorMiniatura bordeImagen">
-        <img
-          class="imgMiniatura"
           src="images/branding_inMotion_papeleria_thumb.jpg"
         />
       </div> -->
     </section>
 
+    <!-- Modal -->
+    <section class="contenedorModal"></section>
+
     <!-- Footer -->
     <footer id="footer"></footer>
 
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <!-- PLANTILLA COMPLETA-->
+    <!-- <section class="contendorModal" id="branding">
+      <div class="contenedorCerrar">
+        <i class="fa fa-times" id="cerrar"></i>
+      </div>
+
+      <div class="modal">
+        <div class="cuerpoModalTexto">
+          <h2>Branding</h2>
+          <p>
+            Branding para un proyecto empresa dedicada a la animación 2D y 3D.
+          </p>
+        </div>
+        <div class="cuerpoModalGaleria">
+          <img
+            src="./images/branding_inMotion_papeleria.jpg"
+            alt="Papeleria de la empresa."
+          />
+          <img
+            src="./images/branding_inMotion_papeleria.jpg"
+            alt="Papeleria de la empresa."
+          />
+        </div>
+      </div>
+
+      <nav class="navigation">
+        <i class="fas fa-chevron-left" id="prev"></i>
+        <i class="fas fa-chevron-right" id="next"></i>
+        <section class="steps">
+          <div class="step activo"></div>
+          <div class="step"></div>
+          <div class="step"></div>
+          <div class="step"></div>
+        </section>
+      </nav>
+    </section> -->
+
+    <!-- PLANTILLA VACIA-->
+    <!-- <section class="contenedorModal">
+      <div class="contenedorCerrar">
+        <i class="fa fa-times" id="cerrarModal"></i>
+      </div>
+
+      <div class="modal">
+        <div class="cuerpoModalTexto"></div>
+        <div class="cuerpoModalGaleria"></div>
+      </div>
+
+      <nav class="navigation">
+        <i class="fas fa-chevron-left" id="prev"></i>
+        <i class="fas fa-chevron-right" id="next"></i>
+        <section class="steps"></section>
+      </nav>
+    </section> -->
   </body>
 </html>
