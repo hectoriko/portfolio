@@ -244,7 +244,7 @@ const video = new Proyecto(
         "Video montado durante mi paso por el estudio ajusteFinal, para promocionar la creación de la marca de una empresa de acabados.",
     },
   ],
-  `${pathProyectos}/montaje_mano_final_thumb.jpg`,
+  `${pathProyectos}/timeline_video_thumb.jpg`,
 );
 
 /* const webNoe = new Proyecto(

@@ -15,13 +15,12 @@ function cargarProyectos() {
       // `;
 
       return /* html */ `
-      <div class="contenedorMiniatura" id=${proyecto.id} data-aos="fade-up" data-aos-offset="300" data-aos-once="true" >
+      <div class="contenedorMiniatura" id=${proyecto.id} data-aos="fade-up" data-aos-offset="220" data-aos-once="true" >
         <div class="imgBx">
           <div class="darken"></div>
           <img src="${proyecto.miniatura}"/>
         </div>
         <div class="details">
-
           <h3 class="titulo">
             <span>${proyecto.titulo}</span>
             <span>${proyecto.titulo}</span>

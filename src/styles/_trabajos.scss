@@ -191,6 +191,7 @@
         font-weight: 600;
         overflow: hidden;
         position: relative;
+        padding: 0.3rem 0;
 
         span {
           transition: all 0.4s cubic-bezier(0.7, 0.01, 0.37, 1);
@@ -281,10 +282,16 @@
 
   .seccionGridTrabajos {
     padding: variables.$padding-escritorio;
-    columns: 3 auto;
+    columns: 2 auto;
     width: 100%;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .seccionGridTrabajos {
+    columns: 3 auto;
   }
 }
 
