@@ -22,6 +22,8 @@ nav {
   }
 
   #logo {
+    position: relative;
+    z-index: 10;
     margin-right: auto;
     text-transform: capitalize;
     font: {
@@ -38,42 +40,110 @@ nav {
   }
 
   #menuMobile {
-    a {
-      margin: 1rem 0;
+    .menu-hamburguesa {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 26px;
+      height: 24px;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+
+      .boton-hamburguesa {
+        width: 30px;
+        height: 4px;
+        background: variables.$main-color;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+
+        &:nth-child(1),
+        &:nth-child(3) {
+          width: 22px;
+        }
+      }
+
+      &.open {
+        .boton-hamburguesa {
+          &:nth-child(2) {
+            transform: translateX(50px);
+            background: transparent;
+          }
+
+          &:nth-child(1),
+          &:nth-child(3) {
+            width: 24px;
+            background: variables.$text-color;
+          }
+
+          &:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+          }
+
+          &:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+          }
+        }
+      }
     }
 
     .menuLateral {
       height: 100%;
       width: 0;
       position: fixed;
-      z-index: 1;
+      z-index: 4;
       top: 0;
       right: 0rem;
-      padding-top: 1.5rem;
+      padding: 15% 0;
+      // margin-top: variables.$nav-height-mobile;
       background-color: variables.$main-color;
-      box-shadow: 0 0 10px black;
+      box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
       overflow-x: hidden;
-      transition: 0.3s ease-in-out;
+      transition: 0.2s ease-in-out;
+      transition: 0.2s cubic-bezier(0.24, 0.73, 0.57, 0.88);
       display: flex;
       flex-direction: column;
-
-      i {
-        align-self: flex-end;
-        margin-right: 1.5rem;
-      }
+      justify-content: space-evenly;
 
       &.abierto {
         width: 100%;
       }
 
-      & > * {
-        transition: all 0.3s ease-in-out;
-      }
+      a {
+        transition: color 0.2s ease-in-out;
+        font: {
+          size: 2rem;
+          weight: 600;
+        }
 
-      &:hover {
-        color: #fff;
+        &:hover {
+          color: #fff;
+        }
       }
     }
+
+    /* .menuLateral {
+      // height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 4;
+      top: 0;
+      right: 0rem;
+      padding: 1.5rem 0;
+      margin-top: variables.$nav-height-mobile;
+      background-color: variables.$main-color;
+      box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
+      overflow-x: hidden;
+      transition: 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+
+      &.abierto {
+        width: 100%;
+      }
+    } */
   }
 }
 

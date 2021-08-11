@@ -1,5 +1,7 @@
 import { infoProyectos } from "./info-proyectos.js";
 
+// const pagActual = window.location.pathname.split("/").pop();
+
 // Template modal
 const templateModal = /* html */ `
   <div class="contenedorCerrar">
@@ -145,9 +147,9 @@ function cargarInfoModal(e) {
   steps.innerHTML = [...miniaturas]
     .map(miniatura => {
       if (miniatura.id === proyecto.id) {
-        return /* html */ `<div class="step stepActivo"></div>`;
+        return /* html */ `<span class="step stepActivo"></span>`;
       } else {
-        return /* html */ `<div class="step"></div>`;
+        return /* html */ `<span class="step"></span>`;
       }
     })
     .join("");

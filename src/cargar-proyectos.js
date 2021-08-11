@@ -8,9 +8,20 @@ function cargarProyectos() {
 
   const html = proyectos
     .map(proyecto => {
+      // return /* html */ `
+      // <div class="contenedorMiniatura" id="${proyecto.id}" data-aos="fade-up" data-aos-offset="200" >
+      //   <img src="${proyecto.miniatura}"/>
+      // </div>
+      // `;
+
       return /* html */ `
       <div class="contenedorMiniatura" id=${proyecto.id} data-aos="fade-up" data-aos-offset="200" >
-        <img src="${proyecto.miniatura}"/>
+        <div class="imgBx">
+          <img src="${proyecto.miniatura}"/>
+        </div>
+        <div class="details">
+          <h3>${proyecto.titulo}</h3>
+        </div>
       </div>
       `;
     })

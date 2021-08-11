@@ -14,7 +14,6 @@ import "./type";
 import "./scroll";
 
 // Importamos resto de JS
-import "./nav";
+import "./navegacion";
 import "./cargar-proyectos";
 import "./cargar-modal";
-// import "./pasos";
