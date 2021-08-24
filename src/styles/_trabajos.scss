@@ -48,7 +48,7 @@
 
   &#cabeceraTrabajosDesarrollador {
     &::after {
-      background-image: url("../images/textura_stripes.png");
+      background-image: url("../resources/images/textura_stripes.png");
       opacity: 0.25;
       z-index: -1;
       background-size: 10px 4px;
@@ -62,7 +62,7 @@
   &#cabeceraTrabajosDiseño {
     &::after {
       background: {
-        image: url("../images/textura_papel.jpg");
+        image: url("../resources/images/textura_papel.jpg");
         position: center center;
         repeat: no-repeat;
         size: cover;
@@ -74,18 +74,17 @@
 
     .tituloDiseño {
       border: 4px solid variables.$text-color;
-      // padding: 2rem 3rem; Esto sería para escritorio
       padding: 1.3rem 1.6rem;
       transform-style: preserve-3d;
 
       &:hover {
-        cursor: url("../images/custom-cursor.png"),
-          url("../images/custom-cursor.cur"), cell;
+        cursor: url("../resources/images/custom-cursor.png"),
+          url("../resources/images/custom-cursor.cur"), cell;
       }
 
-      h1 {
+      /* h1 {
         transform: translateZ(20px);
-      }
+      } */
 
       .manejador {
         content: "";
@@ -152,6 +151,9 @@
   columns: 1 auto;
   column-gap: 1.5rem;
   padding: variables.$padding-movil;
+  -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+  page-break-inside: avoid; /* Firefox */
+  break-inside: avoid; /* IE 10+ */
 
   .contenedorMiniatura {
     margin: 0 1.5rem 1.5rem 0;
@@ -161,40 +163,67 @@
     border-radius: 18px;
     overflow: hidden;
     cursor: pointer;
+    position: relative;
 
-    .imgBx {
-      // overflow: hidden;
-      position: relative;
-      border: 0;
-      padding: 0;
+    // z-index: 5;
 
-      .darken {
-        background: transparent;
-        transition: all 1s cubic-bezier(0.7, 0.01, 0.37, 1);
-      }
+    -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+    page-break-inside: avoid; /* Firefox */
+    break-inside: avoid; /* IE 10+ */
 
-      img {
-        width: 100%;
-        transition: all 0.4s cubic-bezier(0.7, 0.01, 0.37, 1);
-        transform-origin: center 40%;
-      }
+    // -webkit-column-break-inside: avoid-column; /* Chrome, Safari, Opera */
+    // page-break-inside: avoid-column; /* Firefox */
+    // break-inside: avoid-column; /* IE 10+ */
+
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: -webkit-radial-gradient(white, black);
+
+    // -webkit-backface-visibility: hidden;
+    // -moz-backface-visibility: hidden;
+    // backface-visibility: hidden;
+    // -webkit-transform: translate3d(0, 0, 0);
+    // -moz-transform: translate3d(0, 0, 0);
+    // transform: translate3d(0, 0, 0);
+
+    .darken {
+      background: transparent;
+      will-change: opacity;
+      transition: all 0.8s cubic-bezier(0.7, 0.01, 0.37, 1);
+      // background-color: red;
+      position: absolute;
+      // top: 0;
+      // left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    img {
+      width: 100%;
+      transition: all 0.6s cubic-bezier(0.7, 0.01, 0.37, 1);
+      transform-origin: center 35%;
+      will-change: transform;
+      // position: relative;
+      // z-index: -1;
     }
 
     .details {
       position: relative;
-      z-index: 3;
+      z-index: 2;
       padding: 0.8rem 1rem;
       padding-bottom: 1.1rem;
 
-      h3.titulo {
+      .titulo {
         text-align: left;
         font-weight: 600;
         overflow: hidden;
         position: relative;
         padding: 0.3rem 0;
+        will-change: transform;
 
         span {
           transition: all 0.4s cubic-bezier(0.7, 0.01, 0.37, 1);
+          will-change: inherit;
         }
 
         span:first-child {
@@ -216,43 +245,38 @@
     }
 
     &:hover {
-      .imgBx {
-        .darken {
-          position: absolute;
-          z-index: 1;
-          top: 0;
-          left: 0;
-          bottom: -3rem;
-          width: 100%;
-          height: 200%;
-          // background-color: rgba(0, 0, 0, 0.3);
-          background: rgb(255, 255, 255);
-          background: -moz-linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(0, 0, 0, 1) 70%,
-            rgba(0, 0, 0, 1) 100%
-          );
-          background: -webkit-linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(0, 0, 0, 1) 70%,
-            rgba(0, 0, 0, 1) 100%
-          );
-          background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(0, 0, 0, 1) 70%,
-            rgba(0, 0, 0, 1) 100%
-          );
-          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#000000",GradientType=1);
-        }
+      .darken {
+        background: rgba(0, 0, 0, 0.3);
 
-        img {
-          transform: scale(1.5) translateY(3%);
-          transform-origin: center 30%;
-        }
+        // background: rgb(255, 255, 255);
+        // background: -moz-linear-gradient(
+        //   180deg,
+        //   rgba(255, 255, 255, 0) 0%,
+        //   rgba(0, 0, 0, 1) 80%,
+        //   rgba(0, 0, 0, 1) 100%
+        // );
+        // background: -webkit-linear-gradient(
+        //   180deg,
+        //   rgba(255, 255, 255, 0) 0%,
+        //   rgba(0, 0, 0, 1) 80%,
+        //   rgba(0, 0, 0, 1) 100%
+        // );
+        // background: linear-gradient(
+        //   180deg,
+        //   rgba(255, 255, 255, 0) 0%,
+        //   rgba(0, 0, 0, 1) 80%,
+        //   rgba(0, 0, 0, 1) 100%
+        // );
+        // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#000000",GradientType=1);
       }
+
+      img {
+        transform: scale(1.8) translateY(3%);
+      }
+
+      // .imgBx {
+      // }
+
       .details {
         .titulo {
           span:first-child {
@@ -294,54 +318,3 @@
     columns: 3 auto;
   }
 }
-
-//
-// $letters: 20;
-// $cubic-slow: cubic-bezier(0.7, 0.01, 0.37, 1);
-
-// .roll-up {
-//   overflow: hidden;
-//   position: relative;
-//   > span {
-//     display: inline-block;
-//     position: relative;
-//     @for $i from 1 through $letters {
-//       &:nth-child(#{$i}) {
-//         transition-delay: #{$i * 0.008}s;
-//       }
-//     }
-//     > span {
-//       display: inline-block;
-//       transition: 0.6s $cubic-slow;
-//       transition-delay: inherit;
-//       &:nth-child(1) {
-//         position: relative;
-//       }
-//       &:nth-child(2) {
-//         position: absolute;
-//         transform: translateY(100%);
-//         left: 0;
-//         color: variables.$main-color;
-//       }
-//     }
-//   }
-// }
-
-// .contenedorMiniatura {
-//   &:hover {
-//     .details {
-//       .roll-up {
-//         > span {
-//           > span {
-//             &:nth-child(1) {
-//               transform: translateY(-110%);
-//             }
-//             &:nth-child(2) {
-//               transform: translateY(0);
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }

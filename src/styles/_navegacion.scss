@@ -3,7 +3,7 @@
 /* Navegacion */
 nav {
   position: fixed;
-  z-index: 5;
+  z-index: 50;
   top: 0;
   width: 100%;
   height: variables.$nav-height-mobile;
@@ -14,6 +14,9 @@ nav {
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+  // Fix para Safari - Problema Z-index con Transform
+  transform: translateZ(200px);
+  transform-style: preserve-3d;
 
   & > * {
     display: flex;
@@ -90,7 +93,7 @@ nav {
     }
 
     .menuLateral {
-      height: 100%;
+      height: 100vh;
       width: 0;
       position: fixed;
       z-index: 4;

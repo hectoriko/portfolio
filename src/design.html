@@ -8,10 +8,17 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
 
     <!-- Font Awesome -->
-    <script
+    <!-- <script
       src="https://kit.fontawesome.com/fa63d3d034.js"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
 
     <!-- jQuery -->
     <!-- <script
@@ -23,70 +30,70 @@
 
     <!-- #region -- Favicon -->
     <!-- For old IEs -->
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <link rel="shortcut icon" href="resources/images/favicon/favicon.ico" />
     <!-- For new browsers - multisize ico  -->
     <link
       rel="icon"
       type="image/x-icon"
       sizes="16x16 32x32"
-      href="images/favicon/favicon.ico"
+      href="resources/images/favicon/favicon.ico"
     />
     <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
     <link
       rel="apple-touch-icon"
       sizes="152x152"
-      href="images/favicon/favicon-152-precomposed.png"
+      href="resources/images/favicon/favicon-152-precomposed.png"
     />
     <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
     <link
       rel="apple-touch-icon"
       sizes="144x144"
-      href="images/favicon/favicon-144-precomposed.png"
+      href="resources/images/favicon/favicon-144-precomposed.png"
     />
     <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
     <link
       rel="apple-touch-icon"
       sizes="120x120"
-      href="images/favicon/favicon-120-precomposed.png"
+      href="resources/images/favicon/favicon-120-precomposed.png"
     />
     <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
     <link
       rel="apple-touch-icon"
       sizes="114x114"
-      href="images/favicon/favicon-114-precomposed.png"
+      href="resources/images/favicon/favicon-114-precomposed.png"
     />
     <!-- For iPhone 6+ -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="images/favicon/favicon-180-precomposed.png"
+      href="resources/images/favicon/favicon-180-precomposed.png"
     />
     <!-- For first- and second-generation iPad: -->
     <link
       rel="apple-touch-icon"
       sizes="72x72"
-      href="images/favicon/favicon-72-precomposed.png"
+      href="resources/images/favicon/favicon-72-precomposed.png"
     />
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
     <link
       rel="apple-touch-icon"
       sizes="57x57"
-      href="images/favicon/favicon-57.png"
+      href="resources/images/favicon/favicon-57.png"
     />
     <!-- For Old Chrome -->
-    <link rel="icon" sizes="32x32" href="images/favicon/favicon-32.png" />
+    <link rel="icon" sizes="32x32" href="resources/images/favicon/favicon-32.png" />
     <!-- For IE10 Metro -->
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="favicon-144.png" />
     <meta name="theme-color" content="#ffffff" />
     <!-- Chrome for Android -->
-    <!-- <link rel="manifest" href="images/favicon/manifest.json" /> -->
-    <link rel="icon" sizes="192x192" href="images/favicon/favicon-192.png" />
+    <!-- <link rel="manifest" href="resources/images/favicon/manifest.json" /> -->
+    <link rel="icon" sizes="192x192" href="resources/images/favicon/favicon-192.png" />
     <!-- #endregion -->
   </head>
   <body>
     <!-- Navegación -->
-    <nav id="nav"></nav>
+    <!-- <nav id="nav"></nav> -->
 
     <!-- Cabecera desarrollo web -->
     <section class="cabeceraTrabajos" id="cabeceraTrabajosDiseño">
@@ -108,81 +115,12 @@
       <i class="fas fa-chevron-down" id="arrowDown"></i>
     </section>
 
-    <section class="seccionGridTrabajos" id="trabajos-design">
-      <!-- <div class="contenedorMiniatura bordeImagen">
-        <img
-          class="imgMiniatura"
-          src="images/branding_inMotion_papeleria_thumb.jpg"
-        />
-      </div>
-
-      <div class="contenedorMiniatura bordeImagen">
-        <img
-          class="imgMiniatura"
-          src="images/branding_inMotion_papeleria_thumb.jpg"
-        />
-      </div> -->
-    </section>
+    <section class="seccionGridTrabajos" id="trabajos-design"></section>
 
     <!-- Modal -->
     <section class="contenedorModal"></section>
 
     <!-- Footer -->
-    <footer id="footer"></footer>
-
-    <!-- PLANTILLA COMPLETA-->
-    <!-- <section class="contendorModal" id="branding">
-      <div class="contenedorCerrar">
-        <i class="fa fa-times" id="cerrar"></i>
-      </div>
-
-      <div class="modal">
-        <div class="cuerpoModalTexto">
-          <h2>Branding</h2>
-          <p>
-            Branding para un proyecto empresa dedicada a la animación 2D y 3D.
-          </p>
-        </div>
-        <div class="cuerpoModalGaleria">
-          <img
-            src="./images/branding_inMotion_papeleria.jpg"
-            alt="Papeleria de la empresa."
-          />
-          <img
-            src="./images/branding_inMotion_papeleria.jpg"
-            alt="Papeleria de la empresa."
-          />
-        </div>
-      </div>
-
-      <nav class="navigation">
-        <i class="fas fa-chevron-left" id="prev"></i>
-        <i class="fas fa-chevron-right" id="next"></i>
-        <section class="steps">
-          <div class="step activo"></div>
-          <div class="step"></div>
-          <div class="step"></div>
-          <div class="step"></div>
-        </section>
-      </nav>
-    </section> -->
-
-    <!-- PLANTILLA VACIA-->
-    <!-- <section class="contenedorModal">
-      <div class="contenedorCerrar">
-        <i class="fa fa-times" id="cerrarModal"></i>
-      </div>
-
-      <div class="modal">
-        <div class="cuerpoModalTexto"></div>
-        <div class="cuerpoModalGaleria"></div>
-      </div>
-
-      <nav class="navigation">
-        <i class="fas fa-chevron-left" id="prev"></i>
-        <i class="fas fa-chevron-right" id="next"></i>
-        <section class="steps"></section>
-      </nav>
-    </section> -->
+    <!-- <footer id="footer"></footer> -->
   </body>
 </html>

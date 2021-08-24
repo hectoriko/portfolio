@@ -1,5 +1,11 @@
 @use "variables";
+// @use "~@fortawesome/fontawesome-free/scss/solid";
+// @use "~@fortawesome/fontawesome-free/scss/fontawesome";
+
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap");
+
+// $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+// @import "~@fortawesome/fontawesome-free/scss/regular";
 
 body {
   color: variables.$text-color;

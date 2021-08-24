@@ -1,0 +1,306 @@
+:root {
+  --colorPrincipal: #e7af14;
+  --colorPrincipalOscuro:#c7991b;
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23f3b815' stroke-width='0.59' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='rotate(34 1000 750) scale(10) translate(-900 -675)'%3E%3Cuse fill='%23eeb415' href='%23s' y='2'/%3E%3Cuse fill='%23eeb415' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23e9b114' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23e9b114' href='%23s'/%3E%3Cuse fill='%23e4ad14' href='%23s' x='2'/%3E%3Cuse fill='%23e4ad14' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='rotate(34 1000 750) scale(10) translate(-900 -675)'%3E%3Cg fill='%23e0a913'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='rotate(34 1000 750) scale(10) translate(-900 -675)'%3E%3Cg fill='%23e0a913'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='rotate(34 1000 750) scale(10) translate(-900 -675)'%3E%3Cg fill='%23dba613'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='rotate(34 1000 750) scale(10) translate(-900 -675)'%3E%3Cg fill='%23f3b815'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23d6a212'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='rotate(34 1000 750) scale(10) translate(-900 -675)'%3E%3Cg fill='%23c7991b'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='rotate(34 1000 750) scale(10) translate(-900 -675)'%3E%3Cg fill='%23c7991b'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='rotate(34 1000 750) scale(10) translate(-900 -675)'%3E%3Cg fill='%23c7991b'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  color: var(--colorPrincipal);
+  margin-bottom: 45px;
+}
+
+.contenedorEleccion, .contenedorPresupuesto {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedorEleccion {
+  flex-basis: 60%;
+}
+
+.contenedorPresupuesto {
+  flex: 0 1 40%;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.15);
+  background-color: var(--colorPrincipal);
+  background-image: var(--pattern);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.contenedorEleccion div > * {
+  margin: 15px;
+}
+
+.tipoModelo div:last-of-type {
+  margin-top: -10px;
+}
+
+.tipoModelo, .caracteristicas, .extras {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tipoModelo {
+  flex-direction: column;
+}
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(175, 175, 175, 0.2) ;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.tipoModelo img {
+  width: 130px;
+  border-radius: 50%;
+}
+
+.tipoModelo input {
+  margin: 15px 70px;
+  margin-top: -35px;
+
+ /*  margin: -20px 65px 30px 60px; */
+}
+
+.seleccionado {
+  background-color: #f0d078;
+  border: 3px solid var(--colorPrincipal);
+}
+
+/* input[type=submit] {
+  background-color: var(--colorPrincipal);
+  margin-top: 25px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: var(--colorPrincipalOscuro);
+  text-transform: uppercase;
+  font-weight: bolder;
+  transition: all .2s ease-in-out;
+} */
+
+.presupuestoActivo {
+  font-family: monospace;
+  text-align: left;
+  padding: 30px;
+  background-color: rgb(255, 255, 255); 
+  background-image: url('../img/texture.png');
+  background-size: 100%;
+  
+  transform: rotate(-1deg) scale(0.9);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.219);
+   
+  transition: all .3s ease-in-out;
+  color: rgb(55, 56, 58);
+
+  clip-path: polygon(
+    0% 0%,
+    2% 0.7%,
+    4% 0%,
+    6% 0.7%,
+    8% 0%,
+    10% 0.7%,
+    12% 0%,
+    14% 0.7%,
+    16% 0%,
+    18% 0.7%,
+    20% 0%,
+    22% 0.7%,
+    24% 0%,
+    26% 0.7%,
+    28% 0%,
+    30% 0.7%,
+    32% 0%,
+    34% 0.7%,
+    36% 0%,
+    38% 0.7%,
+    40% 0%,
+    42% 0.7%,
+    44% 0%,
+    46% 0.7%,
+    48% 0%,
+    50% 0.7%,
+    52% 0%,
+    54% 0.7%,
+    56% 0%,
+    58% 0.7%,
+    60% 0%,
+    62% 0.7%,
+    64% 0%,
+    66% 0.7%,
+    68% 0%,
+    70% 0.7%,
+    72% 0%,
+    74% 0.7%,
+    76% 0%,
+    78% 0.7%,
+    80% 0%,
+    82% 0.7%,
+    84% 0%,
+    86% 0.7%,
+    88% 0%,
+    90% 0.7%,
+    92% 0%,
+    94% 0.7%,
+    96% 0%,
+    98% 0.7%,
+    100% 0%,
+  
+    100% 100%,
+    98% 99.3%,
+    96% 100%,
+    94% 99.3%,
+    92% 100%,
+    90% 99.3%,
+    88% 100%,
+    86% 99.3%,
+    84% 100%,
+    82% 99.3%,
+    80% 100%,
+    78% 99.3%,
+    76% 100%,
+    74% 99.3%,
+    72% 100%,
+    70% 99.3%,
+    68% 100%,
+    66% 99.3%,
+    64% 100%,
+    62% 99.3%,
+    60% 100%,
+    58% 99.3%,
+    56% 100%,
+    54% 99.3%,
+    52% 100%,
+    50% 99.3%,
+    48% 100%,
+    46% 99.3%,
+    44% 100%,
+    42% 99.3%,
+    40% 100%,
+    38% 99.3%,
+    36% 100%,
+    34% 99.3%,
+    32% 100%,
+    30% 99.3%,
+    28% 100%,
+    26% 99.3%,
+    24% 100%,
+    22% 99.3%,
+    20% 100%,
+    18% 99.3%,
+    16% 100%,
+    14% 99.3%,
+    12% 100%,
+    10% 99.3%,
+    8% 100%,
+    6% 99.3%,
+    4% 100%,
+    2% 99.3%,
+    0% 100%    
+    );
+}
+
+.presupuestoActivo:hover {
+  transform: rotate(1.05deg) scale(1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.presupuestoActivo div {
+  padding: 10px;
+  border-bottom: 2px dotted currentColor;
+  letter-spacing: 0.03rem;  
+}
+
+.presupuestoActivo div:last-of-type {
+  border-bottom: none; 
+}
+
+
+.info {
+  letter-spacing: 0.06rem;
+  text-align: center;
+}
+
+.precio {
+  position: relative;
+  float: right;
+  top: -15px;
+  font-weight: bolder;
+  /* background-color: #fff;
+  padding: 7px;
+  box-shadow: 2px 2px 0px var(#000);
+  border-radius: 5px; */
+}
+
+.presupuestoActivo .precioFinal {
+  font-weight: bolder;
+  float: right;
+  font-size: 1.5rem;
+  border: none;
+  /* border-top: 2px double black;
+  border-bottom: 2px double black; */
+}
+
+.caracteristicas label, input[type=submit] {
+  color:  #fff;
+  font-weight: bolder;
+  background-color: var(--colorPrincipal);
+  padding: 16px;
+  
+  border-radius: 5px;
+}
+
+input[type=submit] {
+  border: none;
+  outline: none;
+  box-shadow: 3px 3px 0px var(--colorPrincipalOscuro);
+}
+
+
+.componente {
+  font-weight: bold;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+}
+
+select {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding-bottom: 3px;
+  border-bottom: 3px solid var(--colorPrincipal);
+  /* outline: none; */
+}
+
+@media all and (min-width: 950px) {
+  body {
+    flex-direction: row;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.15);
+  }
+}
+

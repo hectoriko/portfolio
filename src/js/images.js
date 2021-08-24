@@ -20,5 +20,9 @@ function importAll(r) {
 }
 
 export const images = importAll(
-  require.context("../images", false, /\.(png|jpe?g|svg|pdf|mp4|webm)$/),
+  require.context(
+    "../images",
+    false,
+    /\.(png|jpe?g|svg|pdf|mp4|webm)$/,
+  ),
 );

@@ -9,12 +9,14 @@ class Proyecto {
     this.texto = texto;
     this.imagenes = imagenes;
     this.miniatura = miniatura;
+    this.url = url;
     this.infoProyectos = infoProyectos.push(this); // Con esto, cada nueva instancia se guarda automáticamente en el array llamado proyectos.
   }
 }
 
 // const pathProyectos = "resources/img/proyectos";
-const pathProyectos = "./images";
+// const pathProyectos = "./images";
+const pathProyectos = "resources/images/proyectos";
 
 const montajePagina = new Proyecto(
   "design",
@@ -110,7 +112,8 @@ const tarjetas = new Proyecto(
     },
     {
       src: `${pathProyectos}/tarjetas_tucan_pila_frontal.jpg`,
-      alt: "Pila de tarjetas con en avverso a la vista",
+      alt: "Pila de tarjetas con en anverso a la vista",
+      caption: "Todas estas imágenes son renders 3D.",
     },
   ],
   `${pathProyectos}/tarjetas_tucan_mosaico_thumb.jpg`,
@@ -205,6 +208,31 @@ const lettering = new Proyecto(
   `${pathProyectos}/lettering_bolsa_thumb.jpg`,
 );
 
+const video = new Proyecto(
+  "design",
+  "video",
+  "Videos",
+  "Montaje de videos.",
+  [
+    {
+      video: true,
+      src: `${pathProyectos}/video_buganvillas.mp4`,
+      src2: `${pathProyectos}/video_buganvillas.webm`,
+      caption:
+        "Video montado para promocionar un nuevo negocio dedicado a la hostelería.",
+      // durante mi paso por el estudio ajusteFinal,
+    },
+    {
+      video: true,
+      src: `${pathProyectos}/video_mascuatro.mp4`,
+      src2: `${pathProyectos}/video_mascuatro.webm`,
+      caption:
+        "Video montado para apoyar la creación de la marca de una empresa de acabados.",
+    },
+  ],
+  `${pathProyectos}/timeline_video_thumb.jpg`,
+);
+
 const otros = new Proyecto(
   "design",
   "otros",
@@ -223,51 +251,11 @@ const otros = new Proyecto(
   `${pathProyectos}/montaje_mano_final_thumb.jpg`,
 );
 
-const video = new Proyecto(
-  "design",
-  "video",
-  "Videos",
-  "Montaje de videos.",
-  [
-    {
-      video: true,
-      src: `${pathProyectos}/video_buganvillas.mp4`,
-      src2: `${pathProyectos}/video_buganvillas.webm`,
-      caption:
-        "Video montado durante mi paso por el estudio ajusteFinal, para promocionar un nuevo negocio dedicado a la hostelería.",
-    },
-    {
-      video: true,
-      src: `${pathProyectos}/video_mascuatro.mp4`,
-      src2: `${pathProyectos}/video_mascuatro.webm`,
-      caption:
-        "Video montado durante mi paso por el estudio ajusteFinal, para promocionar la creación de la marca de una empresa de acabados.",
-    },
-  ],
-  `${pathProyectos}/timeline_video_thumb.jpg`,
-);
-
-/* const webNoe = new Proyecto(
-  "web",
-  "webNoe",
-  "Web mochilas",
-  "Diseño y maquetado de esta web para dar a conocer el proyecto de una persona, que en sus ratos libres le gusta dedicarse a la costura.",
-  [
-    {
-      src: `${pathProyectos}/web_noe.jpg`,
-      alt: "",
-      caption: "Proyecto en construcción.",
-    },
-  ],
-  `${pathProyectos}/web_noe.jpg`,
-  "https://hectormartindesign.com/resources/webs/mochilas_noe/index.html",
-); */
-
 const triger = new Proyecto(
   "web",
   "web-triger",
   "Triger asesores",
-  "Diseño y maquetado de esta web para una asesoría fiscal y gestoría que quería ampliuar su negocio y darse a conocer via web.",
+  "Diseño y maquetado de esta web para una asesoría fiscal y gestoría que quería ampliar su negocio y darse a conocer via web.",
   [
     {
       src: `${pathProyectos}/web_triger.png`,
@@ -278,24 +266,24 @@ const triger = new Proyecto(
   "https://trigerasesores.com/",
 );
 
-const webAjuste = new Proyecto(
+const covid = new Proyecto(
   "web",
-  "web-ajuste",
-  "Web ajusteFinal",
-  "Rediseño de la web de este estudio de diseño donde trabajé durante varios años. Se realizó en wordpress con el tema Divi.",
+  "covid",
+  "Higasar Seguridad",
+  "Maquetación en Wordpress de esta página dedicada a vender test para el COVID-19.",
   [
     {
-      src: `${pathProyectos}/web_ajustefinal.jpg`,
-      alt: "Portada web Ajuste Final",
+      src: `${pathProyectos}/web_covid.png`,
+      alt: "Portada Higasar Seguridad - Covid",
     },
   ],
-  `${pathProyectos}/web_ajustefinal.jpg`,
-  "http://www.ajustefinal.com/",
+  `${pathProyectos}/web_covid.png`,
+  `https://www.higasarseguridad.com/test-covid19/`,
 );
 
 const presupuesto = new Proyecto(
   "web",
-  "webAjuste",
+  "presupuesto",
   "Presupuesto",
   "Diseño y programación de una página para calcular el presupuesto de un ordenador en base a las opciones elegidas mediante los formularios.",
   [
@@ -305,8 +293,50 @@ const presupuesto = new Proyecto(
     },
   ],
   `${pathProyectos}/web_presupuesto.png`,
-  ".webs/presupuesto",
+  "webs/presupuesto",
 );
 
-/* Generar array de forma manual que contiene los proyectos*/
-/* const proyectos = [montajePagina, branding, retoqueImagen, tarjetas, newsletter, tresDe, lettering, otros]; */
+const portfolio = new Proyecto(
+  "web",
+  "portfolio",
+  "Mi portfolio web",
+  "Por supuesto, este portfolio web, está integramente diseñado y desarollado por mi. He usado HTML, SASS, JS y Webpack para desarrollarlo.",
+  [
+    {
+      src: `${pathProyectos}/web_hector.png`,
+      alt: "Portada Héctor",
+    },
+  ],
+  `${pathProyectos}/web_hector.png`,
+);
+
+//  const webNoe = new Proyecto(
+//   "web",
+//   "webNoe",
+//   "Web mochilas",
+//   "Diseño y maquetado de esta web para dar a conocer el proyecto de una persona, que en sus ratos libres le gusta dedicarse a la costura.",
+//   [
+//     {
+//       src: `${pathProyectos}/web_noe.jpg`,
+//       alt: "",
+//       caption: "Proyecto en construcción.",
+//     },
+//   ],
+//   `${pathProyectos}/web_noe.jpg`,
+//   "https://hectormartindesign.com/resources/webs/mochilas_noe/index.html",
+// );
+
+// const ajusteFinal = new Proyecto(
+//   "web",
+//   "ajusteFinal",
+//   "Ajuste final",
+//   "Rediseño de la web de este estudio de diseño donde trabajé durante varios años. Se realizó en Wordpress con el tema Divi.",
+//   [
+//     {
+//       src: `${pathProyectos}/web_ajustefinal.jpg`,
+//       alt: "Portada web Ajuste Final",
+//     },
+//   ],
+//   `${pathProyectos}/web_ajustefinal.jpg`,
+//   "http://www.ajustefinal.com/",
+// );

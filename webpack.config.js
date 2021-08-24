@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 let mode = "development";
 let target = "web";
@@ -24,18 +25,18 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        type: "asset/resource",
-      },
-      {
-        test: /\.pdf$/i,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(mp4|webm)$/i,
-        type: "asset/resource",
-      },
+      // {
+      //   test: /\.(png|jpe?g|gif|svg)$/i,
+      //   type: "asset/resource",
+      // },
+      // {
+      //   test: /\.pdf$/i,
+      //   type: "asset/resource",
+      // },
+      // {
+      //   test: /\.(mp4|webm)$/i,
+      //   type: "asset/resource",
+      // },
       {
         test: /\.(s[ac]|c)ss$/i,
         use: [
@@ -55,7 +56,6 @@ module.exports = {
           loader: "babel-loader",
         },
       },
-      
     ],
   },
 
@@ -76,6 +76,13 @@ module.exports = {
       title: "Diseño gráfico | Héctor",
       filename: "design.html",
       template: "./src/design.html",
+    }),
+    new CopyPlugin({
+      patterns: [
+        // { from: "src/webs", to: "webs" },
+        // { from: "src/images/favicon", to: "images/favicon" },
+        { from: "src/resources", to: "resources" },
+      ],
     }),
   ],
 

@@ -16,10 +16,11 @@ function cargarProyectos() {
 
       return /* html */ `
       <div class="contenedorMiniatura" id=${proyecto.id} data-aos="fade-up" data-aos-offset="220" data-aos-once="true" >
-        <div class="imgBx">
+        <!-- <div class="imgBx"> -->
+          <!-- DARKEN -->
           <div class="darken"></div>
           <img src="${proyecto.miniatura}"/>
-        </div>
+        <!-- </div> -->
         <div class="details">
           <h3 class="titulo">
             <span>${proyecto.titulo}</span>
@@ -36,20 +37,4 @@ function cargarProyectos() {
 const trabajos = document.querySelector('[id^="trabajos"]');
 if (typeof trabajos != "undefined" && trabajos != null) cargarProyectos();
 
-// const tituloMatriz = [];
-
-// for (const letra of proyecto.titulo) {
-//   tituloMatriz.push(letra);
-// }
-
-// const htmlTitulo = tituloMatriz
-//   .map(letra => {
-//     return /* html */ `<span><span>${letra}</span><span>${letra}</span></span>`;
-//   })
-//   .join("");
-
-//
-// <!-- <h3>${proyecto.titulo}</h3> -->
-//           <!-- <h3 class="roll-up">
-//             // ${htmlTitulo}
-//           </h3> -->
+// <div class="darken"></div>

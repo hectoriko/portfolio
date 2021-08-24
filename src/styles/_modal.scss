@@ -9,25 +9,16 @@
   left: 0;
   top: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   backdrop-filter: blur(3px);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
+
+  transform: translateZ(250px);
+  transform-style: preserve-3d;
 
   &.visible {
     display: block;
-  }
-
-  .contenedorCerrar {
-    text-align: right;
-
-    i {
-      position: relative;
-      z-index: 3;
-      right: 1rem;
-      top: 1.8rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
   }
 
   .modal {
@@ -41,17 +32,51 @@
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
+    position: relative;
+
+    .contenedorCerrar {
+      text-align: right;
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      color: #fff;
+
+      i {
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+    }
   }
 
   .navigation {
-    all: unset;
+    // all: unset;
+    background: unset;
     height: 8%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 
-    i {
+    #prev,
+    #next {
+      color: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+
+      &:hover {
+        color: variables.$main-color;
+      }
+      &#prev {
+        position: relative;
+        right: 2rem;
+      }
+
+      &#next {
+        position: relative;
+        left: 2rem;
+      }
+    }
+
+    /* i {
       color: rgba(255, 255, 255, 0.7);
       cursor: pointer;
 
@@ -68,7 +93,7 @@
         position: relative;
         left: 2rem;
       }
-    }
+    } */
 
     .step {
       background-color: rgba(255, 255, 255, 0.6);
@@ -100,6 +125,10 @@
     font-weight: 600;
     margin-bottom: 1.4rem;
   }
+
+  p {
+    line-height: 1.2em;
+  }
 }
 
 .cuerpoModalGaleria {
@@ -108,6 +137,15 @@
   justify-content: center;
   grid-gap: 1rem;
   grid-template-columns: minmax(100px, 800px);
+
+  img {
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 5px;
+  }
+
+  img:last-child {
+    margin-bottom: 2rem;
+  }
 }
 
 .cerrarModal:hover,
@@ -115,14 +153,14 @@
   cursor: pointer;
 }
 
-.aviso {
-  font-style: italic;
-  font-size: 0.8rem;
-  padding: 0.7rem;
-  border-radius: 0.5rem;
-  background-color: variables.$gray-color;
-  display: inline;
-}
+// .aviso {
+//   font-style: italic;
+//   font-size: 0.8rem;
+//   padding: 0.7rem;
+//   border-radius: 0.5rem;
+//   background-color: variables.$gray-color;
+//   display: inline;
+// }
 
 .cuerpoModalGaleria img,
 .cuerpoModalGaleria video {
@@ -130,13 +168,14 @@
 }
 
 .pieFoto {
-  font-family: HelveticaLTStd-Obl;
   text-align: left;
-  font-size: 0.8rem;
-  margin-top: -10px;
+  font-size: 0.85rem;
+  margin-top: -5px;
+  margin-bottom: 10px;
 }
 
-.linkPieFoto {
+/* .linkProyecto {
+  margin-top: 1.5rem;
   padding: 1rem;
   border-radius: 10px;
   border: 2px solid variables.$main-color;
@@ -144,13 +183,12 @@
   transition: all 0.2s ease-in-out;
 }
 
-.linkPieFoto:hover {
+.linkProyecto:hover {
   background-color: variables.$main-color;
   color: #ffffff;
-}
+} */
 
 /* -------------------- */
 /* Estilos para Desktop */
 @media screen and (min-width: 600px) {
-
 }

@@ -1,18 +1,18 @@
 // Importamos estilos
 import "../styles/index.scss";
+// import "./fontawesome";
+
 // import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
-// import "@fortawesome/fontawesome-free/js/fontawesome";
-// import "@fortawesome/fontawesome-free/js/solid";
-// import "@fortawesome/fontawesome-free/js/regular";
-// import "@fortawesome/fontawesome-free/js/brands";
-// import "@fortawesome/fontawesome-free/js/all";
+// import "../../node_modules/@fortawesome/fontawesome-free/js/all.js";
+// import "../../node_modules/@fortawesome/fontawesome-free/css/solid.min.css";
+// import "../../node_modules/@fortawesome/fontawesome-free/js/solid.min.js";
 
 // Importamos componentes
 import "./navegacion";
 import "./footer";
 
 // Importamos imágenes
-import "./images";
+// import "./images";
 
 // Importamos librerias
 import "./tilt";

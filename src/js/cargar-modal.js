@@ -4,20 +4,21 @@ import { infoProyectos } from "./info-proyectos.js";
 
 // Template modal
 const templateModal = /* html */ `
-  <div class="contenedorCerrar">
-    <i class="fa fa-times" id="cerrarModal"></i>
-  </div>
-
   <div class="modal">
+    <div class="contenedorCerrar">
+      <i class="fas fa-times" id="cerrarModal"></i>
+    </div>
     <div class="cuerpoModalTexto"></div>
     <div class="cuerpoModalGaleria"></div>
+    <div class="linkProyecto"></div>
   </div>
 
   <nav class="navigation">
     <i class="fas fa-chevron-left" id="prev"></i>
     <section class="steps"></section>
     <i class="fas fa-chevron-right" id="next"></i>
-  </nav>`;
+  </nav>
+  `;
 
 //
 // Insertar Template modal
@@ -40,6 +41,12 @@ const contador = {
 
 const cerrarModal = document.querySelector("#cerrarModal");
 cerrarModal.addEventListener("click", toggleModal);
+
+contenedorModal.addEventListener("click", e => {
+  if (e.target === contenedorModal) {
+    toggleModal();
+  }
+});
 
 //
 // Click en miniatura abre modal
@@ -83,6 +90,8 @@ function isEnd(num) {
 function cargarInfoModal(e) {
   let proyecto;
 
+  console.log("Holaaa!");
+
   // Definimos en que proyecto estamos
   if (this.id == "next") {
     contador.proyectoActual++;
@@ -109,38 +118,44 @@ function cargarInfoModal(e) {
   cuerpoModalGaleria.innerHTML = proyecto.imagenes
     .map(imagen => {
       // Solo imágen
-      if (!imagen.video && !imagen.caption) {
-        return /*html*/ `
-        <img src="${imagen.src}" alt="${imagen.alt}"/>
-        `;
+      if (!imagen.video) {
+        if (!imagen.caption) {
+          return /*html*/ `<img src="${imagen.src}" alt="${imagen.alt}"/>`;
+        } else {
+          return /*html*/ `
+            <img src="${imagen.src}" alt="${imagen.alt}"/>
+            <p class="pieFoto">${imagen.caption}</p>`;
+        }
       }
-      // Imágen y caption
-      else if (!imagen.video && imagen.caption) {
-        return /*html*/ `
-        <img src="${imagen.src}" alt="${imagen.alt}"/>
-        <p class="pieFoto">${imagen.caption}</p>
-        `;
-      }
+
       // Solo video
-      else if (imagen.video && !imagen.caption) {
-        return /*html*/ `
+      if (imagen.video) {
+        if (!imagen.caption) {
+          return /*html*/ `
         <video controls>
           <source src="${imagen.src}" type="video/mp4" />
-          <!-- <source src="./images/video_buganvillas.webm" type="video/webm"> -->
+          <source src="${imagen.src2}" type="video/webm">
         </video>
         `;
-        // Video y caption
-      } else if (imagen.video && imagen.caption) {
-        return /*html*/ `
+        } else {
+          return /*html*/ `
         <video controls>
           <source src="${imagen.src}" type="video/mp4" />
           <source src="${imagen.src2}" type="video/webm">
         </video>
         <p class="pieFoto">${imagen.caption}</p>
         `;
+        }
       }
     })
     .join("");
+
+  // Link a proyecto
+  const linkProyecto = document.querySelector(".linkProyecto");
+
+  if (proyecto.url && proyecto.url != "") {
+    linkProyecto.innerHTML = /* html */ `<a href="${proyecto.url}" target="_blank"><button>Visitar</button></a>`;
+  }
 
   // Steps
   const steps = document.querySelector(".steps");
@@ -153,10 +168,24 @@ function cargarInfoModal(e) {
       }
     })
     .join("");
+
+  // Desactivar scroll cuando está el modal
 }
 
 function toggleModal() {
   contenedorModal.classList.toggle("visible");
+
+  // Congelamos el body cuando el modal está abierto
+  const body = document.querySelector("body");
+  if (contenedorModal.classList.contains("visible")) {
+    // Disable scroll
+    body.style.overflow = "hidden";
+  } else {
+    // Enable scroll
+    body.style.overflow = "unset";
+  }
 }
 
 isEnd(contador.pasoActual);
+
+console.log(prev, next);

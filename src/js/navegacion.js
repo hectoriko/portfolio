@@ -1,37 +1,41 @@
-export const nav =
+const navHTML =
   /* html */
-  `<a href="index.html" id="logo">
-    Héctor
-  </a>
+  `<!-- Navegación -->
+  <nav id="nav">
+    <a href="index.html" id="logo">
+      Héctor
+    </a>
 
-  <div id="menuDesktop">
-    <a href="web.html">Web</a>
-    <a href="design.html">Diseño gráfico</a>
-    <a href="index.html#seccionContacto">Contacto</a>
-  </div>
-
-  <div class="menuMobile" id="menuMobile">
-    <!-- <i class="fa fa-bars" id="botonHamburguesa"></i> -->
-    <!-- <img id="botonHamburguesa" src="./images/hb.png" /> -->
-
-    <!-- BURGER -->
-    <div class="menu-hamburguesa">
-      <span class="boton-hamburguesa"></span>
-      <span class="boton-hamburguesa"></span>
-      <span class="boton-hamburguesa"></span>
-    </div>
-
-    <div class="menuLateral" id="menuLateral">
-      <!-- <i class="fa fa-times" id="botonCerrar"></i> -->
-      <a href="web.html">Web</a>
+    <div id="menuDesktop">
+      <a href="web.html">Maquetador web</a>
       <a href="design.html">Diseño gráfico</a>
       <a href="index.html#seccionContacto">Contacto</a>
     </div>
-  </div>`;
+
+    <div class="menuMobile" id="menuMobile">
+
+      <!-- BURGER -->
+      <div class="menu-hamburguesa">
+        <span class="boton-hamburguesa"></span>
+        <span class="boton-hamburguesa"></span>
+        <span class="boton-hamburguesa"></span>
+      </div>
+
+      <div class="menuLateral" id="menuLateral">
+        <a href="web.html">Maquetador web</a>
+        <a href="design.html">Diseño gráfico</a>
+        <a href="index.html#seccionContacto">Contacto</a>
+      </div>
+    </div>
+  </nav>`;
 
 /* Insertar NAV */
-const navContenedor = document.querySelector("#nav");
-navContenedor.innerHTML = nav;
+// const nav = document.querySelector("#nav");
+// nav.innerHTML = navHTML;
+
+const nav = document.createRange().createContextualFragment(navHTML);
+document.querySelector("body").prepend(nav);
+// document.querySelector("body").appendChild(nav);
 
 /* Navegación */
 const botonHamburguesa = document.querySelector(".menu-hamburguesa");
